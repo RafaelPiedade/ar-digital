@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <title>Document</title>
+
+    <script>
+        $(document).ready(() => {
+            const tabela =  $("#example").DataTable()
+
+
+            $("#caminho").click(() =>{
+                tabela.destroy();
+
+
+                tabela = $("#example").DataTable({
+                    ajax: {
+                    url: './teste',
+                    method: "GET",
+                    xhrFields: {
+                        withCredentials: true
+                    }
+                },
+                columns: [
+                    { data: "lote" },
+                    { data: "notificacao" },
+                    { data: "Placa" },
+                    { data: "Renavan" },
+                    { data: "MarModelo" },
+                    { data: "ChassiVeiculoBase" },
+                    { data: "MotorVeiculoBase" },
+                    { data: "Cliente" },
+                    { data: "Endereco" },
+                    { data: "Bairro" },
+                    { data: "CEP" },
+                    { data: "Cidade" },
+                    { data : null, render: "<a> OLA </a>"}
+                ]
+                }) 
+            
+            })
+
+            /*$("#example").DataTable({
+                "scrollY": true,
+                "scrollX": true,
+                ajax: {
+                    url: './teste',
+                    method: "GET",
+                    xhrFields: {
+                        withCredentials: true
+                    }
+                },
+                columns: [
+                    { data: "lote" },
+                    { data: "notificacao" },
+                    { data: "Placa" },
+                    { data: "Renavan" },
+                    { data: "MarModelo" },
+                    { data: "ChassiVeiculoBase" },
+                    { data: "MotorVeiculoBase" },
+                    { data: "Cliente" },
+                    { data: "Endereco" },
+                    { data: "Bairro" },
+                    { data: "CEP" },
+                    { data: "Cidade" }
+                ]
+            });
+            /*success: (data) => {
+                console.log('!ok feito')
+                var lotes = data.data,
+                
+
+                lotes.forEach(lote => {
+                    table.rows.add({
+                        [0]: lote.lote,
+                        [1]: lote.notificacao,
+                        [2]: lote.Placa,
+                        [3]: lote.Renavan,
+                        [4]: lote.MarModelo,
+                        [5]: lote.ChassiVeiculoBase,
+                        [6]: lote.MotorVeiculoBase,
+                        [7]: lote.Cliente,
+                        [8]: lote.Endereco,
+                        [9]: lote.Bairro,
+                        [10]: lote.CEP,
+                        [11]: lote.Cidade
+                    }).draw();*/
+
+
+
+
+            $('#example').on('click', 'tr', function () {
+                var id = $('#example').row(this).id();
+                console.log($('#example').row(this).data()[1])
+                alert('Clicked row id ' + id);
+            });
+
+
+            console.log('ok')
+
+
+
+
+        });
+          /*
+*/
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <a id="caminho">Aperte para pesquisar</a>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Lote </th>
+                <th>Notificacao</th>
+                <th>Descrição</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>final</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Lote </th>
+                <th>Notificacao</th>
+                <th>Descrição</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>Btn</th>
+                <th>final</th>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+
+</html>

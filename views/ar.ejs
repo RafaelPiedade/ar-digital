@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="documento">
+        <section class="grid section1-template">
+            <div class="item section1-area-1 bordaTodas">
+                <img src="/img/logo_aviso.PNG" alt="" id="logo_aviso">
+                <img src="/img/logoDER.png" alt="" id="logo_der1">
+            </div>
+            <div class="item section1-area-2 bordaEsq bordaDir bordaInf">
+                <h1>Destinatário</h1>
+                <span><%= lote.cliente %></span>
+                <span><%= lote.endereco %></span>
+                <span><%= lote.bairro %></span>
+                <span><%= lote.cidade %></span>
+                <span id="cep_principal"><%= lote.cep %></span>
+
+                <div class="div-codigo-de-barra-1" style="display: none;">
+                    <span><%= lote.cod1 %></span><br>
+                    <img  src="https://www.invertexto.com/image.php?scale=2&rotation=0&font=none&font_size=11&text=<%= lote.cod1 %>&thickness=30&code=code39extended" height="60px" width="208px" alt="">
+                </div>
+            </div>
+            <div class="item section1-area-3  bordaInfDir">
+                <h1>tentativas de entrega</h1>
+                <img src="/img/logo_ar.png" alt="" id="logo_ar" style="display: none;">
+                <div id="aviso">
+                    <p>ATENÇÃO: <br>Após a 3ª <br> tentativa, <br> devolver o <br> objeto.</p>
+                </div>
+                <div id="tentativas-horario">
+                    <p class="style7">1ª______/______/________ _____:_____h</p>
+                    <p class="style7">2ª______/______/________ _____:_____h</p>
+                    <p class="style7">3ª______/______/________ _____:_____h</p>
+                </div>
+                <img src="/img/motivo_devolucao.PNG" alt="" id="motivo_devolucao">
+            </div>
+            <div class="item section1-area-4 bordaInfDir">
+                <h1>carimbo <br>unidade de entrega</h1>
+            </div>
+            <div class="item section1-area-5 bordaEsq bordaInfDir">
+                <h1>endereço para devolução do ar</h1>
+                <span>Se7i - soluções especiais em tecnologia da informação</span>
+            </div>
+            <div class="item section1-area-6 bordaInfDir">
+                <h1>declaração de conteúdo(opcional)</h1>
+                <span>Notificação de recolhimento</span>
+            </div>
+            <div class="item section1-area-7 bordaInfDir">
+                <h1>rubrica e matrícula do carteiro</h1>
+            </div>
+            <div class="item section1-area-8 bordaInfDir bordaEsq">
+                <h1>para uso do cliente(opcional)</h1>
+            </div>
+            <div class="item section1-area-9 bordaInfDir bordaEsq">
+                <h1>assinatura do recebedor</h1>
+            </div>
+            <div class="item section1-area-10 bordaInfDir">
+                <h1>data de entrega</h1>
+            </div>
+            <div class="item section1-area-11 bordaInfDir bordaEsq">
+                <h1>nome legível do recebedor</h1>
+            </div>
+            <div class="item section1-area-12 bordaInfDir">
+                <h1>n documento de identidade</h1>
+            </div>
+        </section>
+        <div class="quebra-de-linha">
+            <p>Corte Aqui</p>
+            <hr>
+        </div>
+        <section class="grid section2-template">
+            <div class=" item section2-area-1">
+                <img src="/img/logoDER.png" alt="" id="logo_der2">
+                <div id="" class=" data-postagem bordaTodas">
+                    <p>DATA DE POSTAGEM</p>
+                    <span id="data_postagem"> 08/03/2019</span>
+                    <p id="ardigital">AR DIGITAL</p>
+                </div>
+                <img src="/img/logo_remessa.PNG" alt="" id="logo_remessa" style="display: none">
+                <h1 id="notificacao">NOTIFICAÇÃO DE RECOLHIMENTO</h1>
+                <P id="txt">DESTINATÁRIO</P>
+            </div>
+            <div class=" item section2-area-2 bordaTodas">
+
+                <div class="ar2-destinatario " >
+                    <span id="code_cep"></span><span id="code_cep2"></span><br>
+                    <p><%= lote.cliente %></p>
+                    <span><%= lote.endereco %> </span><span></span><span></span><span><%= lote.bairro %></span><br>
+                    <span><%= lote.cep %></span> - <span><%= lote.cidade %></span>
+
+                </div>
+            </div>
+            <div class=" item section2-area-3 "style="display: none;">
+                <span><%= lote.cod2 %></span><br>
+                <img src="https://www.invertexto.com/image.php?scale=2&rotation=0&font=none&font_size=11&text=<%= lote.cod2 %>&thickness=30&code=code39extended" height="50px" width="208px" alt="">
+            </div>
+            <div class=" item section2-area-4 ">
+                <div class="bordaTodas" id="cte">
+                    <p class="">PARA USO DA ECT</p>
+                    <div class="bordaSup" id="bb">
+                        <p>Caso não seja possível a entrega desta notificação ao destinatário, favor enviá-la para:</p>
+                        <p>SE7i - Solucoes Especiais em tecnologia da Informação</p>
+                        <p>RUA JOSÉ SEVERINO DOS SANTOS, 230, VILA FIUZA, CEP:19814-500 - ASSIS - SP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="quebra-de-linha">
+            <p>Dobre Aqui</p>
+            <hr>
+        </div>
+
+        <table class="bordaTodas" cellspacing="0">
+            <tr class="linha">
+                <td class="bordaTodas" width="80px">
+                    <img src="/img/logoDER.png" alt="" width="90%">
+                </td>
+                <td class="bordaInfDir">OBSERVAÇÕES</td>
+            </tr>
+            <tr style="height: 280px;">
+                <td colspan="2" class="bordaInf" id="obsevacao">
+
+                    <P>
+                            Havendo interesse em reaver o bem, caberá a V Sa. providenciar a regularização do veiculo e da sua
+                             documentação, que deverá ser apresentada no  pátio  abaixo  
+                            juntamente  com o pagamento das despesas de guincho e estadia a serem apuradas na hora da liberação. 
+                    </P><br>
+                    <p>
+                            A retirada do veículo  poderá ser  feita  pelo proprietário ou  pelo notificado até a data do Leilão. 
+                            Caso haja algum impedimento legal do leilão do mesmo, enviar as cópias dos documentos que comprovem os 
+                            fatos para o DER/SP no seu Departamento de Leilão, sito a  Avenida do Estado, 777, 5º  andar, Ponte 
+                             Pequena, São Paulo/SP,  CEP: 01107-000, sempre acompanhado desta notificação. 
+                    </p><br>
+
+                    <p>     Para esclarecimentos sobre o leilão entrar em contato nos fones 011-3311-1561/1644 ou fax 1562 ou email: comissao_leilao@der.sp.gov.br. 
+                            Para esclarecimentos sobre os valores de estadia e liberação entrar em contato direto com o pátio de recolhimento nos 
+                            fones: (11) 4412-2859/2387 ou 4449-7600/7601 e no e-mail leilaoder@tecnologiagto.com.br.</P>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p class="quebrapagina"></p>
+
+
+    <div id="documento-2">
+        <div class="notificacao-head">
+            <img src="/img/logoDER.png" alt="" id="logo_der3">
+            <h1>NOTIFICAÇÃO DE RECOLHIMENTO DE VEÍCULO</h1>
+
+            <div class="notificacao-item">
+                <span class="label-title">notificação:</span>
+                <span class="label-text"><%= lote.cliente %></span>
+            </div>
+
+            <div class="notificacao-item">
+                <span class="label-title">endereço:</span>
+                <span class="label-text"><%= lote.endereco %></span>
+            </div>
+
+            <div class="notificacao-item">
+                <span class="label-title">placa:</span>
+                <span class="label-text"><%= lote.placa %></span>
+            </div>
+
+            <div class="notificacao-item">
+                <span class="label-title">marca:</span>
+                <span class="label-text"><%= lote.marcaModelo %></span>
+            </div>
+
+            <div class="notificacao-item">
+                <span class="label-title">chassi:</span>
+                <span class="label-text"><%= lote.chassi %></span>
+            </div>
+
+        </div>
+        <div class="notificacao-body">
+            <p>Fica Vossa Senhoria noficado(a) de que o veiculo abaixo idenficado, que consta ser de Vossa
+                Propriedade(*)
+                conforme pesquisa PRODESP - DETRAN - SP, encontra-se recolhido no pátio credenciado da empresa</p>
+            <p>Patio: <span>Patio: Localizado na Estrada Taboão do Parateí, nº 3031, Taboão, SP 88 Km 39, Mogi das
+                    Cruzes/SP</span></p>
+            <p>Outrossim, se no prazo de 20 (vinte) dias a contar do recebimento da presente, e, após 60 (sessenta) dias
+                do
+                recolhimento não houver manifestação de interesse sobre o referido veiculo junto a este Departamento, o
+                mesmo
+                será levado a hasta publica, conforme os termos do Artigo 328 da Lei Federal 9.503 de 23/09/1997, Código
+                de
+                Transito Brasileiro - CTB, da Lei Estadual 15.276/2013, da Lei Estadual 15.911/2015, e normas
+                complementares,
+                inclusive como "SUCATA FERROSA" ficando V.Sa. responsável pela quitação dos débitos existentes de IPVA e
+                multas
+                incidentes ate a data do leilão, que não forem possíveis de pagamento com saldo da venda do veiculo.</p>
+            <p>(*) Obs.: Caso V.Sa. não seja mais o atual proprietário do veiculo, e tenha realizado bloqueio de
+                comunicação
+                de
+                venda junto ao DETRAN ou CIRETRAN de sua cidade, solicitamos desconsiderar a presente.</p>
+        </div>
+        <div class="notificacao-footer">
+            <p>Assis, 08 de Março de 2019</p>
+            <br>
+            <p>Se7i - Soluções Especiais em Tecnologia da Informação</p>
+            <p>Empresa</p>
+        </div>
+    </div>
+    <script>
+        const cep = document.getElementById('cep_principal').textContent;
+        console.log(cep)
+        var soma = 0;
+        for (let index = 0; index < cep.length; index++) {
+            soma += parseInt(cep[index]);
+        }
+        let codigo = Math.ceil(soma/10)
+        console.log('codigo', codigo)
+        document.getElementById('code_cep2').append(`/${cep}${codigo}/`);
+        document.getElementById('code_cep').append(`/${cep}${codigo}/`);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="/script/scriptAjax.js"></script>
+
+    <style>
+        table.paleBlueRows {
+  font-family: "Times New Roman", Times, serif;
+  border: 1px solid #FFFFFF;
+  width: 350px;
+  height: 200px;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.paleBlueRows td, table.paleBlueRows th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+}
+table.paleBlueRows tbody td {
+  font-size: 11px;
+}
+table.paleBlueRows tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.paleBlueRows thead {
+  background: #0B6FA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.paleBlueRows thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.paleBlueRows thead th:first-child {
+  border-left: none;
+}
+
+table.paleBlueRows tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #D0E4F5;
+  border-top: 3px solid #444444;
+}
+table.paleBlueRows tfoot td {
+  font-size: 14px;
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <label> Empresa</label>
+        <select id="empresa">
+            <option value="">Selecione</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label> Leilao</label>
+        <select id="leilao">
+            <option value="">Selecione</option>
+        </select>
+    </div>
+    <br>
+    <div >
+        <label> Judicial:</label><br>
+        <input type="radio" name="judicial" value="s"> Sim |
+        <input type="radio" name="judicial" value="n"> Não |
+        <input type="radio" name="judicial" value="t" checked> Todos
+    </div>
+    <br>
+    <div>
+        <label> Retirados:</label><br>
+        <input type="radio" name="retirado" value="s"> Sim |
+        <input type="radio" name="retirado" value="n"> Não |
+        <input type="radio" name="retirado" value="t" checked> Todos
+    </div>
+    <br>
+    <div>
+        <label> Comunicação:</label><br>
+        <input name="comunicacao" id="chk01" value="1" type="checkbox" />Proprietario |
+        <input name="comunicacao" id="chk02" value="2" type="checkbox" />Comunicação 1 |
+        <input name="comunicacao" id="chk03" value="3" type="checkbox" />Comunicação 2
+    </div>
+    <p id="go" style="font-size: 15px;">Start</p>
+
+    <p id="allpdf"><b>Gerar Todos pdf</b></p>
+ 
+    <div style="overflow: auto; width: 100%; font-size: 15px;">
+    <table id="myTable" class="paleBlueRows">
+        <thead>
+            <tr>
+                <th>Lote</th>
+                <th>Notificacao</th>
+                <th>Placa</th>
+                <th>Renavan</th>
+                <th>Marca / Modelo</th>
+                <th>Chassi</th>
+                <th>Motor</th>
+                <th>Observação</th>
+                <th>Cliente</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>CEP</th>
+                <th>Cidade</th>
+                <th>BOTAO</th>
+                <th>Codigo 1</th>
+                <th>Codigo 2</th>
+            </tr>
+        </thead>
+        <tbody id="tb-body">
+
+        </tbody>
+
+    </table>
+</div>
+</body>
+
+
+<p id="descricao-leilao"></p>
+</html>
