@@ -87,7 +87,7 @@ $(document).ready(() => {
                                 <td>${lote.Cidade}</td>
                                 <td>
                                 <a
-                                href="./ar?lote=${lote.lote}&notificacao=${lote.notificacao}&placa=${lote.Placa}&renvan=${lote.Renavan}&marcaModelo=${lote.MarModelo}&chassi=${lote.ChassiVeiculoBase}&motor=${lote.MotorVeiculoBase}&obs=${lote.Observacao}&cliente=${lote.Cliente}&endereco=${end}&bairro=${bair}&cep=${lote.CEP}&cidade=${lote.Cidade}&cod1=${codigos[i] == undefined ? 'undefined' : codigos[i].cod1}&cod2=${codigos[i] == undefined ? 'undefined' : codigos[i].cod2}" target="_blank" >visualizar pdf</a><br><br>
+                                href="./ar?lote=${lote.lote}&notificacao=${lote.notificacao}&placa=${lote.Placa}&renvan=${lote.Renavan}&marcaModelo=${lote.MarModelo}&chassi=${lote.ChassiVeiculoBase}&motor=${lote.MotorVeiculoBase}&obs=${lote.Observacao}&cliente=${lote.Cliente}&endereco=${end}&bairro=${bair}&cep=${lote.CEP}&cidade=${lote.Cidade}&cod1=${codigos[i] == undefined ? 'undefined' : codigos[i].cod1}&cod2=${codigos[i] == undefined ? 'undefined' : codigos[i].cod2}&leilao=${$('#leilao  option:selected').text()}" target="_blank" >visualizar pdf</a><br><br>
                                 <a class="pdf" >gerar pdf</a>  </td>
                                 <td> 
                                 ${codigos[i] == undefined ? 'undefined' : codigos[i].cod1}
@@ -140,7 +140,8 @@ $(document).ready(() => {
                 cep: tr.children[11].textContent,
                 cidade: tr.children[12].textContent,
                 cod1: tr.children[14].textContent,
-                cod2: tr.children[15].textContent
+                cod2: tr.children[15].textContent,
+                leilao: document.getElementById('leilao').textContent
             })
         })
 
@@ -248,7 +249,8 @@ function getLoteTable(elemento) {
         cep: array[11],
         cidade: array[12],
         cod1: array[14],
-        cod2: array[15]
+        cod2: array[15],
+        leilao: document.getElementById('leilao').textContent
     }
 
     return lote;

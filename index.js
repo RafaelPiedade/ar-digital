@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 // middlewares
 app.use(myConnection(mysql,{
-    host: 'localhost',
+    host: '192.168.100.102',
     user: 'root',
     password: '',
     port: 3306,

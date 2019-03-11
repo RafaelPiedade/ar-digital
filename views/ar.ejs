@@ -83,7 +83,7 @@
                 <img src="/img/logoDER.png" alt="" id="logo_der2">
                 <div id="" class=" data-postagem bordaTodas">
                     <p>DATA DE POSTAGEM</p>
-                    <span id="data_postagem"> 08/03/2019</span>
+                    <span id="data_postagem"></span>
                     <p id="ardigital">AR DIGITAL</p>
                 </div>
                 <img src="/img/logo_remessa.PNG" alt="" id="logo_remessa" style="display: none">
@@ -112,10 +112,17 @@
                         <p>SE7i - Solucoes Especiais em tecnologia da Informação</p>
                         <p>RUA JOSÉ SEVERINO DOS SANTOS, 230, VILA FIUZA, CEP:19814-500 - ASSIS - SP</p>
                     </div>
+                    
+                </div>
+            
+                <div id="dados_leilao">
+                    <p><b>Leilao:</b> <%= lote.leilao %></p>
+                    <p><b>Lote:</b> <%= lote.lote %></p>
                 </div>
             </div>
+
         </section>
-        <div class="quebra-de-linha">
+        <div class="quebra-de-linha" style="margin-top: 20px">
             <p>Dobre Aqui</p>
             <hr>
         </div>
@@ -207,7 +214,7 @@
                 venda junto ao DETRAN ou CIRETRAN de sua cidade, solicitamos desconsiderar a presente.</p>
         </div>
         <div class="notificacao-footer">
-            <p>Assis, 08 de Março de 2019</p>
+            <p  id="dataCompleta"></p>
             <br>
             <p>Se7i - Soluções Especiais em Tecnologia da Informação</p>
             <p>Empresa</p>
@@ -221,10 +228,25 @@
             soma += parseInt(cep[index]);
         }
         let codigo = Math.ceil(soma/10)
-        console.log('codigo', codigo)
+
         document.getElementById('code_cep2').append(`/${cep}${codigo}/`);
         document.getElementById('code_cep').append(`/${cep}${codigo}/`);
 
+
+
+        function dataCompleta(){
+            monName = new Array ("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Agosto", "Outubro", "Novembro", "Dezembro")
+            now = new Date
+            return `Assis, ${now.getDate()} de ${monName[now.getMonth()]} de ${ now.getFullYear ()}`
+        }
+
+        function dataParcial(){
+            now = new Date
+            return `${now.getDate()}/${("00" + now.getMonth()).slice(-2)}/${now.getFullYear()}`
+        }
+
+        document.getElementById('dataCompleta').append(dataCompleta())
+        document.getElementById('data_postagem').append(dataParcial())
 
     </script>
 </body>

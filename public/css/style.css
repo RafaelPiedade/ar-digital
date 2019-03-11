@@ -280,6 +280,13 @@
     
 }
 
+#dados_leilao{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
 #cte > p{
     position: relative;
     font-size: 8.5px;
